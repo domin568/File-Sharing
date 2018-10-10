@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,16 +642,16 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Domin File Exchange" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -667,11 +668,177 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="OMW-qb-wg8">
+                                <rect key="frame" x="96" y="69" width="298" height="20"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dnp-mG-ZuZ">
+                                <rect key="frame" x="292" y="134" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Send" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gzj-rc-u10">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="send:" target="XfG-lQ-9wD" id="MUb-X8-CvS"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-QB-c0c">
+                                <rect key="frame" x="38" y="172" width="143" height="32"/>
+                                <buttonCell key="cell" type="push" title="Sending file path" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="E7z-fa-QTI">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openSend:" target="XfG-lQ-9wD" id="QsV-3d-Jt9"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SvY-su-sfJ">
+                                <rect key="frame" x="96" y="40" width="302" height="22"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" title="Receiving file" placeholderString="kk" bezelStyle="round" id="ovQ-RT-c0m">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vby-M2-U7A">
+                                <rect key="frame" x="292" y="234" width="144" height="32"/>
+                                <buttonCell key="cell" type="push" title="Close Connections" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0iv-Y7-i69">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeConnections:" target="XfG-lQ-9wD" id="GuW-1d-3Mk"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkM-oo-02O">
+                                <rect key="frame" x="28" y="71" width="66" height="16"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0.00 %" id="E9S-Zf-NAK">
+                                    <font key="font" metaFont="cellTitle"/>
+                                    <color key="textColor" red="0.10271698922980688" green="0.19460041182249055" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7A-mg-S6S">
+                                <rect key="frame" x="395" y="70" width="87" height="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0.0 MB" id="knX-OQ-rhv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAZ-YH-ut0">
+                                <rect key="frame" x="44" y="140" width="234" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Sending file" bezelStyle="round" id="8PS-hb-DI5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.10390401309612385" green="0.32032695306195669" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.75073163967259993" green="0.90395603258796364" blue="0.9836958646774292" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Br1-Jf-RPa">
+                                <rect key="frame" x="181" y="173" width="281" height="26"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sending file path" id="Kcf-rP-hSy">
+                                    <font key="font" metaFont="smallSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zam-4i-1kl">
+                                <rect key="frame" x="36" y="92" width="147" height="32"/>
+                                <buttonCell key="cell" type="push" title="Path for receive" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xRj-Ny-wHA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openReceive:" target="XfG-lQ-9wD" id="q2x-Vs-gqq"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-iD-iC5">
+                                <rect key="frame" x="71" y="234" width="158" height="32"/>
+                                <buttonCell key="cell" type="push" title="Open for connections" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="hDZ-oq-49h">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openForConnections:" target="XfG-lQ-9wD" id="2Du-hE-7Y0"/>
+                                </connections>
+                            </button>
+                            <colorWell fixedFrame="YES" bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4r-13-6dj">
+                                <rect key="frame" x="44" y="241" width="25" height="21"/>
+                                <color key="color" red="1" green="0.2885248650159935" blue="0.28451388070997707" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="closeConnections:" target="XfG-lQ-9wD" id="s95-yb-nZR"/>
+                                </connections>
+                            </colorWell>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYw-3Q-98F">
+                                <rect key="frame" x="44" y="208" width="296" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="mt3-aU-IeX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-iu-6wk">
+                                <rect key="frame" x="355" y="202" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lua-7L-laR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="connect:" target="XfG-lQ-9wD" id="8qf-ux-5Eh"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTg-1m-pjg">
+                                <rect key="frame" x="239" y="15" width="223" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Sending to :" id="Um5-j5-KNW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXg-ZL-NUF">
+                                <rect key="frame" x="-2" y="15" width="216" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Receiving from :" id="Axt-yk-5B3">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="232" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vhJ-uk-mL3">
+                                <rect key="frame" x="181" y="91" width="281" height="29"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Path for receive" id="Gyy-1l-Oob">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5v-ST-TlK">
+                                <rect key="frame" x="383" y="141" width="79" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0.00 MB" id="GQy-Km-EKQ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="color" destination="b4r-13-6dj" id="NtR-Ny-xW2"/>
+                        <outlet property="connectedToField" destination="wXg-ZL-NUF" id="z5K-ay-Sto"/>
+                        <outlet property="fileSizeField" destination="X7A-mg-S6S" id="hQI-OL-SJO"/>
+                        <outlet property="filenameReceive" destination="SvY-su-sfJ" id="4Ub-VR-7Z7"/>
+                        <outlet property="filenameSend" destination="dAZ-YH-ut0" id="lsm-cF-dQq"/>
+                        <outlet property="ipSendingField" destination="LYw-3Q-98F" id="c1u-NU-Igo"/>
+                        <outlet property="percentField" destination="ZkM-oo-02O" id="kvk-nf-Mgj"/>
+                        <outlet property="progress" destination="OMW-qb-wg8" id="BdS-ns-TyQ"/>
+                        <outlet property="receiveFilePathShow" destination="vhJ-uk-mL3" id="OHU-f0-NBi"/>
+                        <outlet property="sendingFilePathShow" destination="Br1-Jf-RPa" id="4b3-xc-kjH"/>
+                        <outlet property="sendingFileSizeField" destination="G5v-ST-TlK" id="87d-7Y-QXv"/>
+                        <outlet property="sendingToField" destination="jTg-1m-pjg" id="el6-Va-IIP"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

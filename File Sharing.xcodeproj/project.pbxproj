@@ -14,6 +14,8 @@
 		3CC88AD81C6CEE2E00DDA557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC88AD61C6CEE2E00DDA557 /* Main.storyboard */; };
 		3CC88AE31C6CEE2E00DDA557 /* File_SharingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC88AE21C6CEE2E00DDA557 /* File_SharingTests.m */; };
 		3CC88AEE1C6CEE2E00DDA557 /* File_SharingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC88AED1C6CEE2E00DDA557 /* File_SharingUITests.m */; };
+		3CC88AFC1C6D1D6F00DDA557 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC88AFB1C6D1D6F00DDA557 /* CFNetwork.framework */; };
+		3CC88AFF1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC88AFE1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		3CC88AE91C6CEE2E00DDA557 /* File SharingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "File SharingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC88AED1C6CEE2E00DDA557 /* File_SharingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = File_SharingUITests.m; sourceTree = "<group>"; };
 		3CC88AEF1C6CEE2E00DDA557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CC88AFB1C6D1D6F00DDA557 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3CC88AFD1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSProgressIndicator+ESSProgressIndicatorCategory.h"; sourceTree = "<group>"; };
+		3CC88AFE1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSProgressIndicator+ESSProgressIndicatorCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC88AFC1C6D1D6F00DDA557 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +85,7 @@
 		3CC88ABF1C6CEE2E00DDA557 = {
 			isa = PBXGroup;
 			children = (
+				3CC88AFB1C6D1D6F00DDA557 /* CFNetwork.framework */,
 				3CC88ACA1C6CEE2E00DDA557 /* File Sharing */,
 				3CC88AE11C6CEE2E00DDA557 /* File SharingTests */,
 				3CC88AEC1C6CEE2E00DDA557 /* File SharingUITests */,
@@ -99,6 +106,8 @@
 		3CC88ACA1C6CEE2E00DDA557 /* File Sharing */ = {
 			isa = PBXGroup;
 			children = (
+				3CC88AFD1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.h */,
+				3CC88AFE1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.m */,
 				3CC88ACB1C6CEE2E00DDA557 /* AppDelegate.h */,
 				3CC88ACC1C6CEE2E00DDA557 /* AppDelegate.m */,
 				3CC88AD11C6CEE2E00DDA557 /* ViewController.h */,
@@ -268,6 +277,7 @@
 			files = (
 				3CC88AD31C6CEE2E00DDA557 /* ViewController.m in Sources */,
 				3CC88AD01C6CEE2E00DDA557 /* main.m in Sources */,
+				3CC88AFF1C6E941B00DDA557 /* NSProgressIndicator+ESSProgressIndicatorCategory.m in Sources */,
 				3CC88ACD1C6CEE2E00DDA557 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +499,7 @@
 				3CC88AF41C6CEE2E00DDA557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CC88AF51C6CEE2E00DDA557 /* Build configuration list for PBXNativeTarget "File SharingTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +508,7 @@
 				3CC88AF71C6CEE2E00DDA557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CC88AF81C6CEE2E00DDA557 /* Build configuration list for PBXNativeTarget "File SharingUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +517,7 @@
 				3CC88AFA1C6CEE2E00DDA557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
